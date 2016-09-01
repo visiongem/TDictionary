@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/flayout_main_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/llayout_tab1"
+            style="@style/llayout_tab">
+
+            <ImageView
+                android:id="@+id/img_tab1"
+                style="@style/img_tab"
+                android:src="@drawable/selector_tab1" />
+
+            <TextView
+                android:id="@+id/tv_tab1"
+                style="@style/txt_tab"
+                android:text="@string/txt_tab1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llayout_tab2"
+            style="@style/llayout_tab">
+
+            <ImageView
+                android:id="@+id/img_tab2"
+                style="@style/img_tab"
+                android:src="@drawable/selector_tab2" />
+
+            <TextView
+                android:id="@+id/tv_tab2"
+                style="@style/txt_tab"
+                android:text="@string/txt_tab2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llayout_tab3"
+            style="@style/llayout_tab">
+
+            <ImageView
+                android:id="@+id/img_tab3"
+                style="@style/img_tab"
+                android:src="@drawable/selector_tab3" />
+
+            <TextView
+                android:id="@+id/tv_tab3"
+                style="@style/txt_tab"
+                android:text="@string/txt_tab3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llayout_tab4"
+            style="@style/llayout_tab">
+
+            <ImageView
+                android:id="@+id/img_tab4"
+                style="@style/img_tab"
+                android:src="@drawable/selector_tab4" />
+
+            <TextView
+                android:id="@+id/tv_tab4"
+                style="@style/txt_tab"
+                android:text="@string/txt_tab4" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

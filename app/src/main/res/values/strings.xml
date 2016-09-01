@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">微字典</string>
+    <string name="txt_tab1">字典</string>
+    <string name="txt_tab2">成语</string>
+    <string name="txt_tab3">发现</string>
+    <string name="txt_tab4">更多</string>
+</resources>
