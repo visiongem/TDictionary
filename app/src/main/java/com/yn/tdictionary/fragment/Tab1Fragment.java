@@ -1,5 +1,6 @@
 package com.yn.tdictionary.fragment;
 
+
 import com.yn.tdictionary.R;
 
 /**
@@ -11,6 +12,15 @@ public class Tab1Fragment extends BaseFragment {
     @Override
     protected int getLayoutId() {
         return R.layout.frag_tab1;
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    public static Tab1Fragment newInstance() {
+        return new Tab1Fragment();
     }
 
 }

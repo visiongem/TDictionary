@@ -38,6 +38,13 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+
+        super.onActivityCreated(savedInstanceState);
+        initData();
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -62,5 +69,10 @@ public abstract class BaseFragment extends Fragment {
      * 得到布局
      */
     protected abstract int getLayoutId();
+
+    /**
+     * 初始化数据
+     */
+    protected abstract void initData();
 
 }

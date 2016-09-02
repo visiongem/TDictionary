@@ -7,8 +7,19 @@ import com.yn.tdictionary.R;
  * Created by yanni on 2016/7/11.
  */
 public class Tab3Fragment extends BaseFragment {
+
     @Override
     protected int getLayoutId() {
         return R.layout.frag_tab3;
     }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    public static Tab3Fragment newInstance() {
+        return new Tab3Fragment();
+    }
+
 }

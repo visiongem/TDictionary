@@ -2,6 +2,7 @@ package com.yn.tdictionary.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
@@ -16,7 +17,6 @@ import com.yn.tdictionary.fragment.Tab1Fragment;
 import com.yn.tdictionary.fragment.Tab2Fragment;
 import com.yn.tdictionary.fragment.Tab3Fragment;
 import com.yn.tdictionary.fragment.Tab4Fragment;
-import com.yn.tdictionary.utils.ToastMaker;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -24,7 +24,7 @@ import butterknife.OnClick;
 /**
  * 主界面
  */
-public class MainActivity extends BaseActivity {
+public class TDictionaryActivity extends BaseActivity {
 
     @BindView(R.id.flayout_main_content)
     FrameLayout flayoutContent;
@@ -65,25 +65,53 @@ public class MainActivity extends BaseActivity {
     private Tab2Fragment tab2Fragment;
     private Tab3Fragment tab3Fragment;
     private Tab4Fragment tab4Fragment;
+
+    private Fragment[] tabFragments;
     private FragmentTransaction ft;
-    private FragmentManager fragmentManager;
+    private FragmentManager fm;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        fragmentManager = getSupportFragmentManager();
+        fm = getSupportFragmentManager();
+        tab1Fragment = Tab1Fragment.newInstance();
+        tab2Fragment = Tab2Fragment.newInstance();
+        tab3Fragment = Tab3Fragment.newInstance();
+        tab4Fragment = Tab4Fragment.newInstance();
+        tabFragments = new Fragment[]{tab1Fragment, tab2Fragment, tab3Fragment, tab4Fragment};
 
         // 这里一定要在save为null时才加载Fragment，Fragment中onCreateView等生命周里加载根子Fragment同理
         // 因为在页面重启时，Fragment会被保存恢复，而此时再加载Fragment会重复加载，导致重叠
-        if(savedInstanceState == null){
+        if (savedInstanceState == null) {
             // 这里加载根Fragment
+
+            fm.beginTransaction()
+                    .add(R.id.flayout_main_content, tab1Fragment, tab1Fragment.getClass().getName())
+                    .add(R.id.flayout_main_content, tab2Fragment, tab2Fragment.getClass().getName())
+                    .add(R.id.flayout_main_content, tab3Fragment, tab3Fragment.getClass().getName())
+                    .add(R.id.flayout_main_content, tab4Fragment, tab4Fragment.getClass().getName())
+                    .hide(tab2Fragment).hide(tab3Fragment).hide(tab4Fragment)
+                    .commit();
+        } else {
+            // "内存重启"时调用
+            tab1Fragment = (Tab1Fragment) fm.findFragmentByTag(Tab1Fragment.class.getName());
+            tab2Fragment = (Tab2Fragment) fm.findFragmentByTag(Tab2Fragment.class.getName());
+            tab3Fragment = (Tab3Fragment) fm.findFragmentByTag(Tab3Fragment.class.getName());
+            tab4Fragment = (Tab4Fragment) fm.findFragmentByTag(Tab4Fragment.class.getName());
+            // 解决重叠问题
+            fm.beginTransaction()
+                    .show(tab1Fragment)
+                    .hide(tab2Fragment).hide(tab3Fragment).hide(tab4Fragment)
+                    .commit();
         }
+
+        viewsOnclick(llayoutTab1);
     }
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_main;
+        return R.layout.activity_tdictionary;
     }
 
     @Override
@@ -117,13 +145,18 @@ public class MainActivity extends BaseActivity {
 
     /**
      * tab切换
+     *
      * @param index
      */
-    private void tabBgChange(int index){
-        for (int i = 0; i < mTitles.length; i++){
+    private void tabBgChange(int index) {
+        ft = fm.beginTransaction();
+        for (int i = 0; i < mTitles.length; i++) {
             mImgTabs[i].setSelected(false);
             mTvTabs[i].setTextColor(ContextCompat.getColor(this, R.color.gray));
+            ft.hide(tabFragments[i]);
         }
+        ft.show(tabFragments[index]);
+        ft.commit();
         mTvTabs[index].setTextColor(ContextCompat.getColor(this, R.color.blue));
         mImgTabs[index].setSelected(true);
     }
