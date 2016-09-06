@@ -7,17 +7,24 @@
     <dimen name="margin_small_5">5dp</dimen>
     <dimen name="margin_large_20">20dp</dimen>
 
-    <dimen name="font_small_10">10sp</dimen>
-    <dimen name="font_small_11">11sp</dimen>
-    <dimen name="font_small_12">12sp</dimen>
-
-    <dimen name="font_normal_13">13sp</dimen>
-    <dimen name="font_normal_14">14sp</dimen>
-    <dimen name="font_normal_15">15sp</dimen>
-
-    <dimen name="font_large_16">16sp</dimen>
-    <dimen name="font_large_17">17sp</dimen>
-    <dimen name="font_large_18">18sp</dimen>
+    <dimen name="font_Display4">112sp</dimen>
+    <dimen name="font_Display3">56sp</dimen>
+    <dimen name="font_Display2">45sp</dimen>
+    <dimen name="font_Display1">34sp</dimen>
+    <dimen name="font_Headline">24sp</dimen>
+    <dimen name="font_Title">20sp</dimen>
+    <dimen name="font_Subhead_device">16sp</dimen>
+    <dimen name="font_Subhead_desktop">15sp</dimen>
+    <dimen name="font_Body2">14sp</dimen>
+    <dimen name="font_Body1">13sp</dimen>
+    <dimen name="font_Caption">12sp</dimen>
+    <dimen name="font_Menu_device">14sp</dimen>
+    <dimen name="font_Menu_desktop">13sp</dimen>
+    <dimen name="font_Button">14sp</dimen>
+    
+    <dimen name="dimen_head">40dp</dimen>
+    <dimen name="dimen_icon">24dp</dimen>
+    <dimen name="dimen_target">48dp</dimen>
 
     <dimen name="img_tab_21">21dp</dimen>
 </resources>

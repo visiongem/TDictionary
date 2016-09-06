@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="标题"
         android:textColor="@color/white"
-        android:textSize="@dimen/font_large_17"
+        android:textSize="@dimen/font_Title"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
