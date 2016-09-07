@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ViewTopTitle">
+        <attr name="isImgBackShow" format="boolean" />
+        <attr name="topTitle" format="string" />
+    </declare-styleable>
+
+</resources>
