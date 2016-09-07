@@ -152,7 +152,7 @@ public class TDictionaryActivity extends BaseActivity {
         ft = fm.beginTransaction();
         for (int i = 0; i < mTitles.length; i++) {
             mImgTabs[i].setSelected(false);
-            mTvTabs[i].setTextColor(ContextCompat.getColor(this, R.color.gray));
+            mTvTabs[i].setTextColor(ContextCompat.getColor(this, R.color.cyan_txt));
             ft.hide(tabFragments[i]);
         }
         ft.show(tabFragments[index]);
