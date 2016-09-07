@@ -3,9 +3,10 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="margin_normal_10">10dp</dimen>
-    <dimen name="margin_small_5">5dp</dimen>
-    <dimen name="margin_large_20">20dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_40">40dp</dimen>
 
     <dimen name="font_Display4">112sp</dimen>
     <dimen name="font_Display3">56sp</dimen>
@@ -22,9 +23,11 @@
     <dimen name="font_Menu_desktop">13sp</dimen>
     <dimen name="font_Button">14sp</dimen>
     
-    <dimen name="dimen_head">40dp</dimen>
-    <dimen name="dimen_icon">24dp</dimen>
-    <dimen name="dimen_target">48dp</dimen>
+    <dimen name="dimen_head_40">40dp</dimen>
+    <dimen name="md_icon_size_24">24dp</dimen>
+    <dimen name="dimen_target_48">48dp</dimen>
+    <dimen name="dimen_app_bar_56">56dp</dimen>
+    <dimen name="margin_vertical_72">72dp</dimen>
 
     <dimen name="img_tab_21">21dp</dimen>
 </resources>
